@@ -1,32 +1,67 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sabía que dirías que sí ❤️</title>
+  <title>❤️ Nosotros ❤️</title>
   <style>
     body {
-      background-color: pink;
-      text-align: center;
+      background: linear-gradient(pink, #ffb6c1);
       font-family: Arial;
+      text-align: center;
     }
+
     h1 {
-      margin-top: 50px;
+      margin-top: 30px;
       font-size: 40px;
     }
-    img {
+
+    /* CONTENEDOR GENERAL */
+    .galeria {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+      gap: 15px;
+    }
+
+    /* FOTOS GRANDES */
+    .grande {
       width: 250px;
-      margin: 10px;
       border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    /* STICKERS */
+    .peque {
+      width: 120px;
+      border-radius: 15px;
+      transform: rotate(-5deg);
+    }
+
+    .peque:nth-child(even) {
+      transform: rotate(5deg);
     }
   </style>
 </head>
 <body>
 
 <h1>❤️ Sabía que dirías que sí ❤️</h1>
-<p>Te quiero mucho 💕</p>
 
-<img src="https://via.placeholder.com/250">
-<img src="https://via.placeholder.com/250">
-<img src="https://via.placeholder.com/250">
+<p>Este es nuestro momento 💕</p>
+
+<div class="galeria">
+
+  <!-- GRANDES -->
+  <img class="grande" src="foto1.jpg">
+  <img class="grande" src="foto2.jpg">
+
+  <!-- STICKERS -->
+  <img class="peque" src="foto3.jpg">
+  <img class="peque" src="foto4.jpg">
+  <img class="peque" src="foto5.jpg">
+  <img class="peque" src="foto6.jpg">
+
+</div>
 
 </body>
 </html>
