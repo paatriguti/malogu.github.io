@@ -2,66 +2,82 @@
 <html>
 <head>
   <title>❤️ Nosotros ❤️</title>
+
   <style>
     body {
-      background: linear-gradient(pink, #ffb6c1);
+      margin: 0;
       font-family: Arial;
+      background: linear-gradient(pink, #ffb6c1);
       text-align: center;
+      overflow: hidden;
     }
 
     h1 {
-      margin-top: 30px;
-      font-size: 40px;
+      margin-top: 20px;
+      font-size: 32px;
     }
 
-    /* CONTENEDOR GENERAL */
-    .galeria {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      margin-top: 30px;
-      gap: 15px;
+    /* CONTENEDOR CENTRAL */
+    .centro {
+      position: relative;
+      z-index: 2;
+      margin-top: 20px;
     }
 
-    /* FOTOS GRANDES */
-    .grande {
-      width: 250px;
+    /* FOTO 1 (ARRIBA) */
+    .foto1 {
+      width: 260px;
       border-radius: 15px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      margin: 10px auto;
+      display: block;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    /* FOTO 2 (ABAJO) */
+    .foto2 {
+      width: 260px;
+      border-radius: 15px;
+      margin: 10px auto;
+      display: block;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
     /* STICKERS */
-    .peque {
-      width: 120px;
+    .sticker {
+      position: absolute;
+      width: 100px;
       border-radius: 15px;
-      transform: rotate(-5deg);
+      opacity: 0.85;
+      animation: flotar 6s ease-in-out infinite;
     }
 
-    .peque:nth-child(even) {
-      transform: rotate(5deg);
+    .s1 { top: 10%; left: 5%; animation-delay: 0s; }
+    .s2 { top: 15%; right: 8%; animation-delay: 1s; }
+    .s3 { bottom: 15%; left: 12%; animation-delay: 2s; }
+    .s4 { bottom: 10%; right: 5%; animation-delay: 3s; }
+
+    @keyframes flotar {
+      0%   { transform: translateY(0px) rotate(0deg); }
+      50%  { transform: translateY(-25px) rotate(5deg); }
+      100% { transform: translateY(0px) rotate(0deg); }
     }
   </style>
 </head>
+
 <body>
 
 <h1>❤️ Sabía que dirías que sí ❤️</h1>
 
-<p>Este es nuestro momento 💕</p>
-
-<div class="galeria">
-
-  <!-- GRANDES -->
-  <img class="grande" src="foto1.jpg">
-  <img class="grande" src="foto2.jpg">
-
-  <!-- STICKERS -->
-  <img class="peque" src="foto3.jpg">
-  <img class="peque" src="foto4.jpg">
-  <img class="peque" src="foto5.jpg">
-  <img class="peque" src="foto6.jpg">
-
+<div class="centro">
+  <img class="foto1" src="foto1.jpg">
+  <img class="foto2" src="foto2.jpg">
 </div>
+
+<!-- STICKERS FLOTANDO -->
+<img class="sticker s1" src="foto3.jpg">
+<img class="sticker s2" src="foto4.jpg">
+<img class="sticker s3" src="foto5.jpg">
+<img class="sticker s4" src="foto6.jpg">
 
 </body>
 </html>
