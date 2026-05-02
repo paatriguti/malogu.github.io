@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>¿Quieres ser mi novia?</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      text-align: center;
+      font-family: Arial;
+    }
+    h1 {
+      margin-top: 100px;
+      font-size: 60px;
+    }
+    button {
+      background-color: yellow;
+      border: none;
+      padding: 15px 40px;
+      font-size: 20px;
+      margin: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>¿Quieres ser mi novia?</h1>
+
+<button onclick="irSi()">SI</button>
+<button id="noBtn" onmouseover="moverNo()">NO</button>
+
+<script>
+function irSi() {
+  window.location.href = "si.html";
+}
+
+function irNo() {
+  window.location.href = "si.html"; // 😈 también manda al SI
+}
+</script>
+
+</body>
+</html>
