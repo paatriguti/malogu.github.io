@@ -16,16 +16,15 @@
     h1 {
       margin-top: 15px;
       font-size: 6vw;
+      position: relative;
+      z-index: 5;
     }
 
-    /* CENTRO */
     .centro {
       position: relative;
-      z-index: 2;
-      margin-top: 10px;
+      z-index: 5;
     }
 
-    /* FOTOS CENTRALES RESPONSIVE */
     .foto1, .foto2 {
       width: 70vw;
       max-width: 260px;
@@ -35,32 +34,47 @@
       box-shadow: 0 0 15px rgba(0,0,0,0.3);
     }
 
-    /* STICKERS FONDO */
+    /* STICKERS visibles pero suaves */
     .sticker {
       position: absolute;
       width: 80px;
       max-width: 20vw;
       border-radius: 15px;
-      opacity: 0.35;
+      opacity: 0.5;
       animation: flotar 6s ease-in-out infinite;
-      pointer-events: none;
+      z-index: 1;
     }
 
     @keyframes flotar {
-      0%   { transform: translateY(0px) rotate(0deg); }
-      50%  { transform: translateY(-20px) rotate(5deg); }
+      0% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-20px) rotate(5deg); }
       100% { transform: translateY(0px) rotate(0deg); }
     }
 
-    /* posiciones repetidas (fondo bonito sin saturar) */
+    /* posiciones */
     .s1 { top: 5%; left: 5%; }
     .s2 { top: 10%; right: 10%; animation-delay: 1s; }
-    .s3 { top: 20%; left: 30%; animation-delay: 2s; }
+    .s3 { top: 25%; left: 30%; animation-delay: 2s; }
     .s4 { top: 35%; right: 20%; animation-delay: 3s; }
     .s5 { bottom: 30%; left: 10%; animation-delay: 1.5s; }
     .s6 { bottom: 20%; right: 5%; animation-delay: 2.5s; }
     .s7 { bottom: 10%; left: 40%; animation-delay: 0.5s; }
     .s8 { top: 50%; left: 50%; animation-delay: 3.5s; }
+
+    /* 💖 CORAZONES CAIENDO */
+    .heart {
+      position: absolute;
+      top: -10px;
+      color: rgba(255,255,255,0.7);
+      font-size: 20px;
+      animation: caer 6s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes caer {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(110vh); opacity: 0; }
+    }
   </style>
 </head>
 
@@ -73,7 +87,7 @@
   <img class="foto2" src="foto2.jpg">
 </div>
 
-<!-- STICKERS REPETIDOS SUAVES -->
+<!-- STICKERS -->
 <img class="sticker s1" src="foto3.jpg">
 <img class="sticker s2" src="foto4.jpg">
 <img class="sticker s3" src="foto5.jpg">
@@ -82,6 +96,27 @@
 <img class="sticker s6" src="foto4.jpg">
 <img class="sticker s7" src="foto5.jpg">
 <img class="sticker s8" src="foto6.jpg">
+
+<!-- CORAZONES -->
+<div id="hearts"></div>
+
+<script>
+function crearCorazones() {
+  const container = document.getElementById("hearts");
+
+  for (let i = 0; i < 25; i++) {
+    let heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 5) + "s";
+    heart.style.fontSize = (10 + Math.random() * 20) + "px";
+    container.appendChild(heart);
+  }
+}
+
+crearCorazones();
+</script>
 
 </body>
 </html>
