@@ -17,17 +17,16 @@
       margin-top: 15px;
       font-size: 6vw;
       position: relative;
-      z-index: 3;
+      z-index: 5;
     }
 
     /* CENTRO */
     .centro {
       position: relative;
-      z-index: 3;
+      z-index: 5;
       margin-top: 10px;
     }
 
-    /* FOTOS PRINCIPALES MÁS PEQUEÑAS */
     .foto1, .foto2 {
       width: 55vw;
       max-width: 200px;
@@ -37,33 +36,32 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.3);
     }
 
-    /* STICKERS COMO FOTOS (SIN DIFUMINAR) */
+    /* STICKERS SOLO ALREDEDOR */
     .sticker {
       position: absolute;
-      width: 90px;
-      max-width: 22vw;
+      width: 85px;
+      max-width: 20vw;
       border-radius: 15px;
-      opacity: 1; /* 👈 importante: SIN transparencia */
-      animation: flotar 6s ease-in-out infinite;
-      z-index: 2; /* 👈 detrás del centro pero visibles */
       box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      animation: flotar 6s ease-in-out infinite;
+      z-index: 1; /* siempre detrás del centro pero visibles */
     }
 
     @keyframes flotar {
       0% { transform: translateY(0px) rotate(0deg); }
-      50% { transform: translateY(-15px) rotate(4deg); }
+      50% { transform: translateY(-12px) rotate(4deg); }
       100% { transform: translateY(0px) rotate(0deg); }
     }
 
-    /* POSICIONES */
-    .s1 { top: 5%; left: 5%; }
-    .s2 { top: 10%; right: 10%; animation-delay: 1s; }
-    .s3 { top: 25%; left: 30%; animation-delay: 2s; }
-    .s4 { top: 35%; right: 20%; animation-delay: 3s; }
-    .s5 { bottom: 30%; left: 10%; animation-delay: 1.5s; }
-    .s6 { bottom: 20%; right: 5%; animation-delay: 2.5s; }
-    .s7 { bottom: 10%; left: 40%; animation-delay: 0.5s; }
-    .s8 { top: 50%; left: 50%; animation-delay: 3.5s; }
+    /* 🔥 SOLO BORDE DE PANTALLA */
+    .s1 { top: 2%; left: 2%; }
+    .s2 { top: 2%; right: 2%; }
+    .s3 { top: 20%; left: 2%; }
+    .s4 { top: 20%; right: 2%; }
+    .s5 { bottom: 20%; left: 2%; }
+    .s6 { bottom: 20%; right: 2%; }
+    .s7 { bottom: 2%; left: 25%; }
+    .s8 { bottom: 2%; right: 25%; }
   </style>
 </head>
 
@@ -76,7 +74,7 @@
   <img class="foto2" src="foto2.jpg">
 </div>
 
-<!-- STICKERS VISIBLES -->
+<!-- STICKERS SOLO ALREDEDOR -->
 <img class="sticker s1" src="foto3.jpg">
 <img class="sticker s2" src="foto4.jpg">
 <img class="sticker s3" src="foto5.jpg">
