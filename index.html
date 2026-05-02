@@ -21,6 +21,9 @@
       margin: 20px;
       cursor: pointer;
     }
+    #noBtn {
+      position: absolute;
+    }
   </style>
 </head>
 <body>
@@ -35,8 +38,14 @@ function irSi() {
   window.location.href = "si.html";
 }
 
-function irNo() {
-  window.location.href = "si.html"; // 😈 también manda al SI
+function moverNo() {
+  var btn = document.getElementById("noBtn");
+
+  var x = Math.random() * (window.innerWidth - 100);
+  var y = Math.random() * (window.innerHeight - 50);
+
+  btn.style.left = x + "px";
+  btn.style.top = y + "px";
 }
 </script>
 
